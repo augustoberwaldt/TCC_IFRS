@@ -20,7 +20,7 @@
 \usepackage{longtable}
 \usepackage{cellspace}
 \bibliographystyle{abnt}
-\usepackage{array, tabularx, caption, boldline}
+\usepackage{array, tabularx, boldline}
 \usepackage{graphicx}
 % ensine o latex a separar em sílabas as palavras que eventualmente ele não souber
 \hyphenation{en-si-na-men-tos a-gra-de-ci-men-to de-se-nha-dos}
@@ -222,11 +222,11 @@ SkinVision é uma solução on-line que apoia os indivíduos na avaliação  e c
 
 \vspace{2cm}
 
-\subsection{Lūbax}
-o sistema Lūbax é um sistema de diagnóstico de doenças de pele. Ele funciona de forma semelhante a um livro de texto, onde você pode encontrar uma imagem que se parece com seu problema de pele \cite{LUBAX}. Mas enquanto observar isso em um livro de texto levaria muito tempo, Lūbax faz isso em um instante. O algoritmo Lūbax funciona um pouco como uma busca de imagens do Google. O Lūbax atualmente só se encontra disponível para sistemas IOS, onde os usuários devem pagar para utilizar o sistema de diagnóstico. 
+\subsection{Lubax}
+o sistema Lubax é um sistema de diagnóstico de doenças de pele. Ele funciona de forma semelhante a um livro de texto, onde você pode encontrar uma imagem que se parece com seu problema de pele \cite{LUBAX}. Mas enquanto observar isso em um livro de texto levaria muito tempo, Lubax faz isso em um instante. O algoritmo Lubax funciona um pouco como uma busca de imagens do Google. O Lubax atualmente só se encontra disponível para sistemas IOS, onde os usuários devem pagar para utilizar o sistema de diagnóstico.
 
 \begin{figure}  [h]
-   \caption{ Interface de usuário do Lūbax}
+   \caption{ Interface de usuário do Lubax}
     \centerline{\includegraphics[width=20em]{figuras/lubax-100713688-orig.jpg}}
    
     \centerline{Fonte: www.lubax.com}
@@ -681,7 +681,7 @@ definir as suas configurações de privacidades, ou seja, o que ele quer receber
  \caption{Tela perfil usuário}
     \centerline{\includegraphics[width=30em]{figuras/sistema/perfil.png}}
    
-    \label{profileimg})
+    \label{profileimg}
     \centerline{Fonte: autor}
 \end{figure}
 
@@ -747,7 +747,7 @@ Abaixo segue a representação das matrizes de confusão obtidas através dos te
 \centering
 \caption{Matriz de Confusão da doença de Melanoma}
 
-\label{mconfusao}
+\label{mconfusao_melanoma}
 
 \begin{tabular}{lllll}
 \cline{1-4}
@@ -766,7 +766,7 @@ Abaixo segue a representação das matrizes de confusão obtidas através dos te
 \centering
 \caption{Matriz de Confusão da doença de Psoríase}
 
-\label{mconfusao}
+\label{mconfusao_psoriase}
 
 \begin{tabular}{lllll}
 \cline{1-4}
@@ -782,7 +782,7 @@ Abaixo segue a representação das matrizes de confusão obtidas através dos te
 
 
 
-A matriz utiliza  uma tabela (com duas linhas e duas colunas) que relata o número de falsos positivos (FP), falsos negativos (FN),  verdadeiros positivos (VP) e verdadeiros negativos (VN). Podemos observar na tabela Tabela: \ref{mconfusao} que na posição (x1, y1) encontra-se o VP,  na posição (x1, y2) encontra-se o FP, na posição (x2, y1) encontra-se FN, e por sua vez na posição (x2,y2) encontra-se o VN. 
+A matriz utiliza  uma tabela (com duas linhas e duas colunas) que relata o número de falsos positivos (FP), falsos negativos (FN),  verdadeiros positivos (VP) e verdadeiros negativos (VN). Podemos observar na Tabela \ref{mconfusao_melanoma} que na posição (x1, y1) encontra-se o VP,  na posição (x1, y2) encontra-se o FP, na posição (x2, y1) encontra-se FN, e por sua vez na posição (x2,y2) encontra-se o VN.
 
 Foi utilizado essa matriz pois para cada  doença foi criado um classificador informando a classe com  as imagens das doenças e uma classe negativa (imagens do que não é classe criada), essa classe e obrigatória para criação do classificador na API, pois como cada classificador é um classificador binário onde o classificador compara uma classe contra todas as outras, no caso do sistema Skin system ele vai comparar somente uma classe com a classe negativa ou seja com as imagens do que não é a doença. O retorno é sempre o valor de uma classe (não  retorna o valor das outras classe, pois a classificação é binária), por isso foi criado um classificador para cada doença. Onde o classificador compara a classe da doença com a classe negativa enviada. Cada classificador sempre retorna um valor independente de ser uma doença ou não.
 
@@ -804,7 +804,7 @@ total de 1600 imagens compondo a base do classificador, essa ténica foi mencion
  \caption{Exemplo do  \textit{data augmentation} aplicado nas imagens das doenças }
     \centerline{\includegraphics[width=20em]{figuras/data_aug_melanoma.png}}
      \centerline{\includegraphics[width=30em]{figuras/data_augementation.png}}
-    \label{classifierimg}
+    \label{classifierimg_aug}
     \centerline{Fonte:autor}
 \end{figure}
 

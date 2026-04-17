@@ -386,10 +386,8 @@
         \setcounter{tocdepth}{0}%
         \@captionlistingfalse%
         \gdef\@chapapp{\MakeUppercase{#1}\space}%
-        \addtocontents{toc}{%
-          \settowidth{\ii@chapnumindent}{{\sffamily\textbf{\@chapapp}}}
-          \addtolength{\ii@chapnumindent}{1.8em}
-        }%
+        \settowidth{\ii@chapnumindent}{{\sffamily\textbf{\@chapapp}}}%
+        \addtolength{\ii@chapnumindent}{1.8em}%
 }
 \newcommand{\annex}{\appendix[\annexname]}
 
